@@ -56,6 +56,18 @@
     transform: translateY(-50%);
     color: rgba(22, 24, 35, 0.34);
 }
+.loading {
+    animation: spniner 0.8s linear infinite;
+
+    @keyframes spniner {
+        from {
+            transform: translateY(-50%) rotate(0);
+        }
+        to {
+            transform: translateY(-50%) rotate(360deg);
+        }
+    }
+}
 
 .search-btn {
     display: flex;
