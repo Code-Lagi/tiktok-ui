@@ -1,19 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-regular-svg-icons';
-import {
-    faCircleXmark,
-    faSpinner,
-    faMagnifyingGlass,
-    faEllipsisVertical,
-    faEarthAsia,
-    faCircleQuestion,
-    faKeyboard,
-    faCloudUpload,
-    faPaperPlane,
-    faArrowRightToBracket,
-    faGear,
-    faCoins,
-} from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisVertical, faCloudUpload } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
@@ -26,11 +12,27 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
+import Image from '~/components/Image';
+import {
+    Messages,
+    Profile,
+    Inbox,
+    MangifyingGlass,
+    Coins,
+    LiveCamera,
+    Gears,
+    LanguagesIcon,
+    FeedbackIcon,
+    KeyboardIcon,
+    LogOutIcon,
+    CircleXMarkIcon,
+    LoadingIcon,
+} from '~/components/icons';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
-        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        icon: <LanguagesIcon />,
         title: 'English',
         children: {
             title: 'Language',
@@ -49,12 +51,12 @@ const MENU_ITEMS = [
         },
     },
     {
-        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        icon: <FeedbackIcon />,
         title: 'Feedback and help',
         to: '/feedback',
     },
     {
-        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        icon: <KeyboardIcon />,
         title: 'Keyboard shortcuts',
     },
 ];
@@ -80,23 +82,28 @@ function Header() {
 
     const userMenu = [
         {
-            icon: <FontAwesomeIcon icon={faUser} />,
+            icon: <Profile />,
             title: 'View profile',
             to: '/@hoa',
         },
         {
-            icon: <FontAwesomeIcon icon={faCoins} />,
+            icon: <Coins />,
             title: 'Get coins',
             to: '/coin',
         },
         {
-            icon: <FontAwesomeIcon icon={faGear} />,
+            icon: <LiveCamera />,
+            title: 'LIVE Studio',
+            to: '/livestudio',
+        },
+        {
+            icon: <Gears />,
             title: 'Settings',
             to: '/settings',
         },
         ...MENU_ITEMS,
         {
-            icon: <FontAwesomeIcon icon={faArrowRightToBracket} />,
+            icon: <LogOutIcon />,
             title: 'Log out',
             to: '/logout',
             separate: true,
@@ -127,12 +134,12 @@ function Header() {
                     <div className={cx('search')}>
                         <input placeholder="Search accounts and videos" spellCheck={false} />
                         <button className={cx('clear')}>
-                            <FontAwesomeIcon icon={faCircleXmark} />
+                            <CircleXMarkIcon />
                         </button>
-                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
+                        <LoadingIcon />
 
                         <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            <MangifyingGlass />
                         </button>
                     </div>
                 </HeadlessTippy>
@@ -145,7 +152,10 @@ function Header() {
                                 </button>
                             </Tippy>
                             <button className={cx('action-btn')}>
-                                <FontAwesomeIcon icon={faPaperPlane} />
+                                <Messages />
+                            </button>
+                            <button className={cx('action-btn')}>
+                                <Inbox />
                             </button>
                         </>
                     ) : (
@@ -156,11 +166,11 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/00b5d2e74d4f6f28486d7ec6306ae552~c5_300x300.webp?x-expires=1665223200&x-signature=NRG9v0v0EMy4%2FpRKXNpda6ugRzA%3D"
                                 alt="Nguyen Van A"
-                            ></img>
+                            ></Image>
                         ) : (
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon={faEllipsisVertical} />
