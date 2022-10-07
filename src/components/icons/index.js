@@ -75,7 +75,7 @@ function Messages({ width = '2.6rem', height = '2.6rem', className }) {
     );
 }
 
-function Inbox({ width = '3.2rem', height = '3.2rem', className }) {
+function InboxIcon({ width = '3.2rem', height = '3.2rem', className }) {
     return (
         <svg
             className={className}
@@ -260,7 +260,7 @@ export {
     CircleXMarkIcon,
     MangifyingGlass,
     Messages,
-    Inbox,
+    InboxIcon,
     Profile,
     Coins,
     LiveCamera,
