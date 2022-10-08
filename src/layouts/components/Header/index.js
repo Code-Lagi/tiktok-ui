@@ -5,7 +5,7 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import classNames from 'classnames/bind';
 
-import routesConfig from '~/config/routes';
+import config from '~/config';
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -73,7 +73,7 @@ function Header() {
         {
             icon: <Profile />,
             title: 'View profile',
-            to: routesConfig.profile,
+            to: config.routes.profile,
         },
         {
             icon: <Coins />,
@@ -102,7 +102,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routesConfig.home} className={cx('logo-link')}>
+                <Link to={config.routes.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="tiktok" />
                 </Link>
 
