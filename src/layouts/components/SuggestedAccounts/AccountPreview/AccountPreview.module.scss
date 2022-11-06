@@ -1,0 +1,64 @@
+.wrapper {
+    padding: 20px;
+    width: 320px;
+    height: 170px;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+.avatar {
+    height: 44px;
+    width: 44px;
+    margin-right: 12px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.body {
+    flex: 1;
+}
+.nickname {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2.2rem;
+    color: #161823;
+    cursor: pointer;
+}
+.check {
+    margin-left: 4px;
+    font-size: 1.4rem;
+    color: #20d5ec;
+    cursor: pointer;
+}
+.name {
+    opacity: #161823bf;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 2rem;
+    cursor: pointer;
+}
+.analytics {
+    margin-top: 8px;
+    // display: flex;
+    // flex-direction: row;
+}
+.user-count {
+    font-weight: 700;
+    margin-right: 6px;
+    font-size: 17px;
+    line-height: 20px;
+    display: inline-block;
+}
+.user {
+    margin-right: 12px;
+    color: rgba(22, 24, 35, 0.75);
+    font-size: 17px;
+    line-height: 20px;
+    display: inline-block;
+}

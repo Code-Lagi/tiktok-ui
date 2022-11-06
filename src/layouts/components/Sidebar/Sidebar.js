@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import config from '~/config';
 import styles from './Sidebar.module.scss';
 import Menu, { MenuItem } from './Menu';
+import SuggestedAccounts from '../SuggestedAccounts';
 
 import {
     FollowingIcon,
@@ -32,6 +33,8 @@ function SideBar() {
                     activeIcon={<CameraActiveIcon />}
                 />
             </Menu>
+            <SuggestedAccounts label="Suggested accounts" />
+            <SuggestedAccounts label="Following accounts" />
         </aside>
     );
 }
